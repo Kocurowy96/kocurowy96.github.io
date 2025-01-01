@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kocurowy96</title>
+  <title>Kocurowy96 Website</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,6 +12,7 @@
     <nav>
       <ul>
         <li><a href="#">Strona główna</a></li>
+        <div id="google_translate_element"></div>
       </ul>
     </nav>
   </header>
@@ -41,5 +42,14 @@
   <footer>
     <p>&copy; 2025 Moja Strona. Wszystkie prawa zastrzeżone.</p>
   </footer>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+
