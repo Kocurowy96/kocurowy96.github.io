@@ -49,8 +49,15 @@ body, html {
     font-size: 3rem;
 }
 
-.sekcja1 {
+.sekcja {
     margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.teskt {
+    color: white;
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -61,6 +68,33 @@ body, html {
     object-fit: cover;
     border-radius: 25px;
 }
+
+
+
+/* Zmniejszenie i wyśrodkowanie wideo na komputerze */
+@media (min-width: 900px) {
+    #video {
+        width: 50%; /* Możesz zmienić na 75% w zależności od preferencji */
+        display: block;
+        margin: 0 auto;
+    }
+}
+@media (min-width: 901px) {
+    #video {
+        width: 75%; /* Możesz zmienić na 75% w zależności od preferencji */
+        display: block;
+        margin: 0 auto;
+    }
+}
+@media (min-width: 1000px) {
+    #video {
+        width: 50%; /* Możesz zmienić na 75% w zależności od preferencji */
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
 
 /* Zmiana koloru i szerokości paska przewijania */
 ::-webkit-scrollbar {

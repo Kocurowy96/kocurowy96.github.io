@@ -19,25 +19,21 @@
                 Twoja przeglądarka nie obsługuje tagu wideo.
             </video>
             <h1 class="tytul">Kocurowy96</h1>
-            <h2 class="sekcja1">Witaj, jestem początkującym programistą</h2>
+            <h2 class="sekcja">Witaj, jestem początkującym programistą</h2>
             <p>ㅤ</p>
-            <p>Przykładowy tekst na stronie</p>
+            <h3 class="tekst">Lubię koty, </h3>
+            <p>ㅤ</p>
+            <h2 class="sekcja">Programowanie:</h2>
+            <h3 class="tekst">HTML5,  CSS,  JavaScript,  C++,  C#</p>
+            <audio controls autoplay class="odtwarzacz">
+                <source src="muzyka/" type="audio/mpeg">
+                <source src="muzyka/" type="audio/mpeg">
+                Twoja przeglądarka nie obsługuje tagu audio.
+            </audio>
         </div>
     </div>
 
-    <script>
-        const video = document.getElementById('background-video');
-        const button = document.getElementById('toggle-sound');
-
-        button.addEventListener('click', () => {
-            if (video.muted) {
-                video.muted = false;
-                button.textContent = 'Wyłącz dźwięk';
-            } else {
-                video.muted = true;
-                button.textContent = 'Włącz dźwięk';
-            }
-        });
-    </script>
+    <script src="skrypty/audio-background.js"></script>
+    <script src="skrypty/animacje.js"></script>
 </body>
 </html>
