@@ -32,9 +32,11 @@ body, html {
     transform: translate(-50%, -50%);
     width: 90%;
     height: 90%;
-    background: rgba(0, 0, 0, 0.764); /* Przezroczysty pasek */
+    background: rgba(0, 0, 0, 0.764);
     border-radius: 10px;
     padding: 20px;
+    overflow-y: auto; /* Pozwala na przewijanie w pionie */
+    overflow-x: hidden;
 }
 
 .content {
