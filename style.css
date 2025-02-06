@@ -69,7 +69,9 @@ body, html {
     border-radius: 25px;
 }
 
-
+.odtwarzacz {
+    position: center;
+}
 
 /* Zmniejszenie i wyśrodkowanie wideo na komputerze */
 @media (min-width: 900px) {
