@@ -30,16 +30,49 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    height: 60%;
-    overflow-y: scroll; /* Pozwala na przewijanie w pionie */
-    background: rgba(0, 0, 0, 0.5); /* Przezroczysty pasek */
+    width: 90%;
+    height: 90%;
+    background: rgba(0, 0, 0, 0.764); /* Przezroczysty pasek */
     border-radius: 10px;
     padding: 20px;
 }
 
 .content {
     color: white;
-    text-align: center;
-    font-size: 2rem;
 }
+
+.tytul {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.sekcja1 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#video {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/* Zmiana koloru i szerokości paska przewijania */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #ffffff00;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

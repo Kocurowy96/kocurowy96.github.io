@@ -8,18 +8,21 @@
     <link rel="icon" type="image/x-icon" href="/zdjecia/favicon.ico">
 </head>
 <body>
-    <div class="video-container">
-        <video id="background-video" autoplay loop muted playsinline>
-            <source src="tla/output.mp4" type="video/mp4">
-            Twoja przeglądarka nie obsługuje tagu wideo.
-        </video>
-    </div>
-    <!-- <div class="content-container">
+    <video id="background-video" autoplay loop muted playsinline>
+        <source src="tla/background.mp4" type="video/mp4">
+        Twoja przeglądarka nie obsługuje tagu wideo.
+    </video>
+    <div class="content-container">
         <div class="content">
-            <h1>Wideo jako tło strony</h1>
+            <video id="video" autoplay loop muted playsinline>
+                <source src="tla/kocurowy96.mp4" type="video/mp4">
+                Twoja przeglądarka nie obsługuje tagu wideo.
+            </video>
+            <h1 class="tytul">Kocurowy96</h1>
+            <h2 class="sekcja1">Witaj, jestem początkującym programistą</h2>
             <p>Przykładowy tekst na stronie</p>
         </div>
-    </div> -->
+    </div>
 
     <script>
         const video = document.getElementById('background-video');
