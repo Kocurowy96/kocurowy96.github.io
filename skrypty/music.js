@@ -1,7 +1,7 @@
 // Lista utworów do odtwarzania
 const playlist = [
-    "kocurowy96.github.io/muzyka/Ariis - From The Top Phonk NCS - Copyright Free Music.mp3",
-    "utwor2.mp3"
+    "muzyka/Ariis - From The Top Phonk NCS - Copyright Free Music.mp3",
+    "muzyka/Julius Dreisig & Zeus X Crona - Invisible [NCS Release].mp3"
 ];
 
 let currentTrack = 0;
