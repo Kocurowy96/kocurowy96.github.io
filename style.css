@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Upewnia się, że wideo będzie na tle */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    overflow-y: scroll; /* Pozwala na przewijanie w pionie */
+    background: rgba(0, 0, 0, 0.5); /* Przezroczysty pasek */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.content {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+}
