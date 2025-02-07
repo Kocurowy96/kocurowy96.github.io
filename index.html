@@ -85,9 +85,9 @@
 
     function updateSoundIcon() {
         if (audio.paused) {
-            soundIcon.src = "zdjecia/Player/offVolume.webp"; dźwięku
+            soundIcon.src = "zdjecia/Player/offVolume.webp";
         } else {
-            soundIcon.src = "zdjecia/Player/onVolume.png"; dźwięku
+            soundIcon.src = "zdjecia/Player/onVolume.png";
         }
     }
 
@@ -120,7 +120,7 @@
         audio.play();
         showNotification(playlist[currentTrack]); 
         updateSoundIcon(); 
-    });
+    }); // tutaj był znak "]" i to pisało że niby jest błąd
 
     // Funkcje do przycisków poprzedni/następny
     const prevButton = document.getElementById("prev-song");
