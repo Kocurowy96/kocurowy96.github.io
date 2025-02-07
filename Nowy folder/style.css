@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+    color: white;
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Upewnia się, że wideo będzie na tle */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    background: rgba(0, 0, 0, 0.764);
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: auto; /* Pozwala na przewijanie w pionie */
+    overflow-x: hidden;
+}
+
+.content {
+    color: white;
+}
+
+.tytul {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.sekcja {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.teskt {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#video {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.odtwarzacz {
+    position: center;
+}
+
+/* Zmniejszenie i wyśrodkowanie wideo na komputerze */
+@media (min-width: 900px) {
+    #video {
+        width: 50%; /* Możesz zmienić na 75% w zależności od preferencji */
+        display: block;
+        margin: 0 auto;
+    }
+}
+@media (min-width: 901px) {
+    #video {
+        width: 75%; /* Możesz zmienić na 75% w zależności od preferencji */
+        display: block;
+        margin: 0 auto;
+    }
+}
+@media (min-width: 1000px) {
+    #video {
+        width: 50%; /* Możesz zmienić na 75% w zależności od preferencji */
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+
+/* Zmiana koloru i szerokości paska przewijania */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #ffffff00;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Kocurowy96 Website</title>
-    <link rel="icon" type="image/x-icon" href="/zdjecia/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="zdjecia/favicon.ico">
 </head>
 <body>
-    <video id="background-video" autoplay loop muted playsinline>
-        <source src="tla/background.mp4" type="video/mp4">
-        Twoja przeglądarka nie obsługuje tagu wideo.
-    </video>
-    <div class="content-container">
-        <p class="tekst">Muzyka na stronie:</p>
-        <audio id="audioPlayer" controls>
-            <source id="audioSource" src="skrypty/muzyka/Ariis - From The Top Phonk NCS - Copyright Free Music.mp3" type="audio/mpeg">
-            Twoja przeglądarka nie obsługuje odtwarzania audio.
-        </audio>
+<audio id="audio-player" loop></audio>   
+<div class="video-container">
+        <video id="background-video" autoplay loop muted playsinline>
+            <source src="tla/background.mp4" type="video/mp4">
+            Twoja przeglądarka nie obsługuje tagu wideo.
+        </video>
+    </div>
+ 
         <p>ㅤ</p>
         <div class="content">
             <video id="video" autoplay loop muted playsinline>
@@ -27,16 +25,141 @@
             <h1 class="tytul">Kocurowy96</h1>
             <h2 class="sekcja">Witaj, jestem początkującym programistą</h2>
             <p>ㅤ</p>
-            <h3 class="tekst">Lubię koty, interesuje się informatyką, robotyką. W wolnym czasie rysuję i tworze mini projekty na moim GitHubie.</h3>
+            <h3 class="tekst">Lubię koty, interesuje się informatyką, robotyką. W wolnym czasie rysuję i tworzę mini projekty na moim GitHubie.</h3>
             <p>ㅤ</p>
             <h2 class="sekcja">Programowanie:</h2>
-            <h3 class="tekst">HTML5,  CSS,  JavaScript,  C++,  C#</h3>
-            
-            
-        </div>
+<div class="tech-icons">
+    <div class="tech-item">
+        <img src="zdjecia/IconProg/html5icon.png" alt="HTML5" class="tech-icon"> HTML5
     </div>
-    <script src="skrypty/audio-background.js"></script>
-    <script src="skrypty/music.js"></script>
-    <script src="skrypty/animacje.js"></script>
+    <div class="tech-item">
+        <img src="zdjecia/IconProg/cssicon.png" alt="CSS" class="tech-icon"> CSS
+    </div>
+    <div class="tech-item">
+        <img src="zdjecia/IconProg/jsicon.webp" alt="JavaScript" class="tech-icon"> JavaScript
+    </div>
+    <div class="tech-item">
+        <img src="zdjecia/IconProg/cppicon.png" alt="C++" class="tech-icon"> C++
+    </div>
+    <div class="tech-item">
+        <img src="zdjecia/IconProg/csharpicon.png" alt="C#" class="tech-icon"> C#
+    </div>
+</div>
+
+            
+    <button id="prev-song">
+        <img src="zdjecia/Player/prev.png" alt="Poprzedni">
+    </button>
+
+    <button id="toggle-sound">
+        <img id="sound-icon" src="zdjecia/Player/offVolume.webp" alt="Sound Icon">
+    </button>
+
+    <button id="next-song">
+        <img src="zdjecia/Player/next.png" alt="Następny">
+    </button>
+</div>
+
+
+
+
+<div id="track-notification" class="track-notification"></div>
+
+
+
+        </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("toggle-sound");
+    const audio = document.getElementById("audio-player");
+    const soundIcon = document.getElementById("sound-icon");
+    const notification = document.getElementById("track-notification"); 
+
+    const playlist = [
+        { title: "Ariis - From The Top | Phonk", artist: "NCS", src: "skrypty/muzyka/test.mp3" },
+        { title: "Julius Dreisig & Zeus X Crona - Invisible | Trap", artist: "NCS", src: "skrypty/muzyka/test2.mp3" }
+    ];
+    let currentTrack = 0;
+
+    audio.src = playlist[currentTrack].src;
+
+    function updateSoundIcon() {
+        if (audio.paused) {
+            soundIcon.src = "zdjecia/Player/offVolume.webp"; dźwięku
+        } else {
+            soundIcon.src = "zdjecia/Player/onVolume.png"; dźwięku
+        }
+    }
+
+  
+    function showNotification(track) {
+        notification.textContent = `Aktualnie gra: ${track.title} - ${track.artist}`;
+        notification.style.opacity = 1;
+        setTimeout(() => {
+            notification.style.opacity = 0;
+        }, 3000); 
+    }
+
+    
+    button.addEventListener("click", () => {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+        updateSoundIcon(); 
+    });
+
+    
+    audio.addEventListener("ended", function () {
+        currentTrack++;
+        if (currentTrack >= playlist.length) {
+            currentTrack = 0; 
+        }
+        audio.src = playlist[currentTrack].src;
+        audio.play();
+        showNotification(playlist[currentTrack]); 
+        updateSoundIcon(); 
+    });
+
+    // Funkcje do przycisków poprzedni/następny
+    const prevButton = document.getElementById("prev-song");
+    const nextButton = document.getElementById("next-song");
+
+    prevButton.addEventListener("click", () => {
+        currentTrack--;
+        if (currentTrack < 0) {
+            currentTrack = playlist.length - 1;
+        }
+        audio.src = playlist[currentTrack].src;
+        audio.play();
+        showNotification(playlist[currentTrack]); 
+        updateSoundIcon(); 
+    });
+
+    nextButton.addEventListener("click", () => {
+        currentTrack++;
+        if (currentTrack >= playlist.length) {
+            currentTrack = 0;
+        }
+        audio.src = playlist[currentTrack].src;
+        audio.play();
+        showNotification(playlist[currentTrack]); 
+        updateSoundIcon(); 
+    });
+
+    
+    updateSoundIcon();
+
+    
+    showNotification(playlist[currentTrack]);
+});
+
+
+
+</script>
+
+
+
 </body>
 </html>
