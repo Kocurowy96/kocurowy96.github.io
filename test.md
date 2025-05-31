@@ -1,8 +1,7 @@
-# test
-## jdu
+# Welcome to KocurHackClient
 
-....
+## Client based on:
+- fabric
+- wurst
 
-hthfhghf
-
-**ff**
+### Created by Kocurowy96
